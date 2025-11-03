@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        
+        <div class="user-info">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" placeholder="Enter your name">
+        </div>
+        
+        <div class="total-expences">
+            <h2>Total Expenses: PKR <span id="total-expences">0</span></h2>
+        </div>
+        
+        <div class="expence-form">
+            <input type="text" id="expence-description" placeholder="Description">
+            <input type="number" id="expence-amount" placeholder="Amount">
+            
+            <select id="expence-category">
+                <option value="" disabled selected>Select Category</option>
+                <option value="Food">Food & Dining</option>
+                <option value="Transport">Transport</option>
+                <option value="Bills">Bills & Utilities</option>
+                <option value="Housing">Housing</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            
+            <input type="date" id="expence-date">
+            <button id="add-expence">Add Expense</button>
+        </div>
+        
+        <div class="expence-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="expence-list">
+                    </tbody>
+            </table>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-controls">
+                <label for="chart-view">Time View:</label>
+                <select id="chart-view">
+                    <option value="month">Monthly</option>
+                    <option value="day">Daily</option>
+                    <option value="year">Yearly</option>
+                </select>
+            </div>
+
+            <div class="chart-group">
+                <div class="chart-container time-chart">
+                    <h2>Expenses Over Time</h2>
+                    <canvas id="time-expence-chart"></canvas>
+                </div>
+
+                <div class="chart-container category-chart">
+                    <h2>Category Breakdown</h2>
+                    <canvas id="category-expence-chart"></canvas>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year"></span> **Expense Tracker App** | Developed by **[Your Name Here]**</p>
+            <p>Data stored securely in your browser's Local Storage.</p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>  
+</body>
+</html>
