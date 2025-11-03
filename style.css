@@ -51,6 +51,7 @@ h1 {
     border-radius: 6px;
     flex-grow: 1;
     font-size: 1rem;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 .total-expences {
@@ -85,10 +86,12 @@ h1 {
     flex-grow: 1;
     min-width: 0;
     font-size: 1rem;
+    box-sizing: border-box; /* <-- CRITICAL FIX: Ensures padding/border is inside the width */
 }
 
 #expence-description {
     flex-grow: 2;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 #add-expence {
@@ -101,6 +104,7 @@ h1 {
     transition: background-color 0.2s, transform 0.1s;
     font-weight: 600;
     white-space: nowrap;
+    box-sizing: border-box; /* Added box-sizing */
 }
 
 #add-expence:hover {
