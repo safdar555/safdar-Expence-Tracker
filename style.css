@@ -320,7 +320,15 @@ footer p:first-child {
         margin-bottom: 25px; /* Increased margin bottom for spacing */
     }
     
-    .expence-form input, .expence-form select, #add-expence, #expence-description {
+    /* MODIFIED: Enforce uniform height for inputs and select only */
+    .expence-form input, .expence-form select {
+        width: 100%;
+        margin-bottom: 0;
+        height: 42px; /* <-- GUARANTEED SAME SIZE */
+    }
+    
+    /* Ensure other elements remain 100% wide */
+    #add-expence, #expence-description {
         width: 100%;
         margin-bottom: 0;
     }
